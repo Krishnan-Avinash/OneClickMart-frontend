@@ -1,0 +1,14 @@
+.sale-ul {
+  padding: 1rem 0 0.5rem 0;
+  width: 100%;
+  height: fit-content;
+  // box-shadow: 0 0 10px red;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.blurred {
+  filter: blur(3px);
+}

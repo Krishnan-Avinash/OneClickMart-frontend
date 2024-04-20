@@ -1,0 +1,11 @@
+.mainfirstleft-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  height: 15rem;
+  padding: 2rem;
+  border-right: 1px solid black;
+  li {
+    list-style: none;
+  }
+}

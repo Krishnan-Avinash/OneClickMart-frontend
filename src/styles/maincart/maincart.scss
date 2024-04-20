@@ -1,0 +1,105 @@
+.cart-container {
+  width: 100%;
+  padding: 5rem;
+  .cart-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    .buttons {
+      .return-to-shop {
+        width: 20%;
+        border: 1px solid black;
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        transition: all 0.1s linear;
+        &:hover {
+          color: #5858ff;
+          border: 1px solid #5858ff;
+        }
+      }
+    }
+    .maincart-left {
+      display: flex;
+      .coupons {
+        width: 50%;
+        // width: 100%;
+        // background-color: red;
+        display: flex;
+        justify-content: space-evenly;
+        // flex-direction: column;
+        input {
+          color: black;
+          width: 50%;
+          height: 2.5rem;
+          font-size: 1.05rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          border: 1px solid black;
+          //   background-color: rgb(228, 228, 228);
+          &:focus {
+            outline: none;
+          }
+        }
+        button {
+          //   width: 40%;
+          height: 2.5rem;
+          background-color: rgb(88, 88, 255);
+          border: 1px solid rgb(88, 88, 255);
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          transition: all 0.1s linear;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+      .main-cart-right {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 0.25rem;
+        padding: 1rem;
+        h3 {
+          padding: 1rem 2rem;
+          font-size: 1.3rem;
+          font-weight: 700;
+        }
+        //WILL DECIDE
+        .subtotal,
+        .shipping,
+        .total {
+          padding: 1rem 2rem;
+          display: flex;
+          justify-content: space-between;
+        }
+        .subtotal,
+        .shipping {
+          border-bottom: 1px solid gray;
+        }
+        .checkout {
+          align-self: center;
+          width: 40%;
+          background-color: rgb(88, 88, 255);
+          border: 1px solid rgb(88, 88, 255);
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          transition: all 0.1s linear;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}

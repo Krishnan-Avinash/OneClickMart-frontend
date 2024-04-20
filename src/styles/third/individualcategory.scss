@@ -1,0 +1,16 @@
+.individual-category-card {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  width: fit-content;
+  border-radius: 0.25rem;
+  border: 1px solid black;
+  img {
+    height: 5rem;
+  }
+  h1 {
+    font-size: 0.95rem;
+  }
+}
+.imag-individualcategory {
+  clip-path: inset(5% 6% 8% 6%);
+}

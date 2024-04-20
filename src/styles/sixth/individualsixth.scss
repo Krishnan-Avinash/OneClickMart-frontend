@@ -1,0 +1,15 @@
+.individual-sixth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .individual-image {
+    height: 5rem;
+  }
+  h1 {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 0.9rem;
+  }
+}

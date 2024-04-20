@@ -1,0 +1,169 @@
+.account-container {
+  width: 100%;
+  padding: 5rem;
+  .account-main {
+    width: 100%;
+    margin-top: 2.5rem;
+    display: flex;
+    .account-left {
+      padding: 0.5rem 1rem;
+      width: 30%;
+      border-right: 1px solid gray;
+      h1 {
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
+      p {
+        padding: 0 1rem;
+        cursor: pointer;
+        transition: all 0.1s linear;
+        &:hover {
+          color: #5858ff;
+          text-decoration: underline;
+        }
+      }
+
+      .account-left-top {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid gray;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .account-left-top-one {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+          }
+          img {
+            height: 2.5rem;
+            width: 2.5rem;
+            border: 1px solid black;
+            border-radius: 50%;
+          }
+        }
+      }
+      .account-left-bottom {
+        padding-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .account-left-bottom-one {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+          }
+          img {
+            height: 2.5rem;
+            width: 2.5rem;
+            border: 1px solid black;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .account-right {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: start;
+      justify-content: space-evenly;
+      padding: 0 1rem;
+      h1 {
+        padding: 1rem 0.5rem;
+        font-size: 1.15rem;
+        color: #5858ff;
+      }
+      .account-right-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 0 0.5rem;
+        input {
+          color: black;
+          width: 45%;
+          height: 2.5rem;
+          font-size: 1.05rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          background-color: rgb(228, 228, 228);
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .account-right-mid {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0 0.5rem;
+        input {
+          color: black;
+          font-size: 1.2rem;
+          width: 45%;
+          height: 2.5rem;
+          background-color: rgb(228, 228, 228);
+          border-radius: 0.25rem;
+          padding: 0.5rem 1rem;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .account-right-bottom {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 0.5rem;
+        gap: 1rem;
+        input {
+          color: black;
+          font-size: 1.2rem;
+          width: 100%;
+          height: 2.5rem;
+          background-color: rgb(228, 228, 228);
+          border-radius: 0.25rem;
+          padding: 0.5rem 1rem;
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      .account-right-last {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        padding: 0 0.5rem;
+        .account-save {
+          background-color: rgb(88, 88, 255);
+          border: 1px solid rgb(88, 88, 255);
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 500;
+          padding: 0.5rem 1rem;
+          border-radius: 0.25rem;
+          transition: all 0.1s linear;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        .account-cancel {
+          color: #5858ff;
+          font-size: 1rem;
+          padding: 0.5rem 1.5rem;
+          transition: all 0.1s linear;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

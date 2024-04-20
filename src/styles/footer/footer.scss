@@ -1,0 +1,118 @@
+.footer-container {
+  height: fit-content;
+  width: 100vw;
+  display: flex;
+  justify-content: start;
+  background-color: black;
+  color: white;
+  padding: 5rem 1.5rem;
+  gap: 1rem;
+  .footer-first {
+    padding: 0.2rem;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+    h1 {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    section {
+      width: 100%;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 0.25rem;
+      input {
+        width: 80%;
+        background-color: transparent;
+        outline: 1px solid white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.85rem;
+      }
+      span {
+        width: 20%;
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .footer-second {
+    padding: 0.2rem;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    h2 {
+      width: 100%;
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+    h6 {
+      width: 100%;
+    }
+  }
+  .footer-third {
+    padding: 0.2rem;
+
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    h2 {
+      width: 100%;
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+    h6 {
+      width: 100%;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+  .footer-forth {
+    padding: 0.2rem;
+
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    h2 {
+      width: 100%;
+      font-size: 1.35rem;
+      font-weight: 500;
+    }
+    h6 {
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+  .footer-fifth {
+    padding: 0.2rem;
+
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    h2 {
+      width: 100%;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .footer-links {
+      width: 100%;
+      display: flex;
+      gap: 0.5rem;
+      img {
+        height: 1.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.mainfirstleftindividual {
+  a {
+    p {
+      font-size: 0.9rem;
+      transition: all 0.1s linear;
+      &:hover {
+        color: #5858ff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
