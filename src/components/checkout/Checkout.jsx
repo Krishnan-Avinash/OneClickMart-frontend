@@ -44,7 +44,17 @@ const Checkout = () => {
           <div className="checkout-right">
             {/* {DATA FROM CART} */}
             <div className="coupons">
-              <input type="text" placeholder="Coupon Code" />
+              <input
+                type="text"
+                placeholder="Coupon Code"
+                onChange={(e) => {
+                  e.target.value = e.target.value.toUpperCase();
+                  e.target.value =
+                    e.target.value.length == 12
+                      ? e.target.value.slice(0, 11).toUpperCase()
+                      : e.target.value.toUpperCase();
+                }}
+              />
               <button>Apply Coupon</button>
             </div>
             <div className="placeOrder">
