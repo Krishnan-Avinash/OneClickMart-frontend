@@ -72,7 +72,9 @@ const MainCart = () => {
             </Table>
           </TableContainer>
           <div className="buttons">
-            <button className="return-to-shop">Return To Shop</button>
+            <Link to="/">
+              <button className="return-to-shop">Return To Shop</button>
+            </Link>
           </div>
           <div className="maincart-left">
             <div className="coupons">
