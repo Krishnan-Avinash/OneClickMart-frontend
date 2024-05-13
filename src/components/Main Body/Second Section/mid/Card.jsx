@@ -16,7 +16,7 @@ const Card = ({ image, link, name, price, blur, desc, id }) => {
       title: "ITEM ADDED TO CART.",
       description: `${name} has been added to the cart`,
       status: "success",
-      duration: 9000,
+      duration: 5000,
       isClosable: true,
     });
   };
