@@ -15,7 +15,11 @@ import {
 } from "@chakra-ui/react";
 import IndividualName from "./IndividualName";
 
+import { useSelector } from "react-redux";
+
 const AllPages = () => {
+  const totalQuantity = useSelector((state) => state.reducer.totalQuantity);
+
   const elements = [
     { name: "Home", link: "/", id: 1 },
     { name: "Contact", link: "/contact", id: 2 },
@@ -70,6 +74,14 @@ const AllPages = () => {
               <Button variant={"ghost"} colorScheme="blue">
                 <Link to={"/contact"} onClick={onClose}>
                   Contact
+                </Link>
+              </Button>
+              <Button variant={"ghost"} colorScheme="blue">
+                <Link to={"/cart"} onClick={onClose}>
+                  Cart:{" "}
+                  <span
+                    style={{ fontSize: "1.25rem", color: "black" }}
+                  >{`${totalQuantity}`}</span>
                 </Link>
               </Button>
               <Button variant={"ghost"} colorScheme="blue">
