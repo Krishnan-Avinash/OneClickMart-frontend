@@ -52,6 +52,7 @@ import MyAccount from "./components/myaccount/MyAccount.jsx";
 import Checkout from "./components/checkout/Checkout.jsx";
 import MainCart from "./components/maincart/MainCart.jsx";
 import IndividualProductDetails from "./components/individualProduct/IndividualProductDetails.jsx";
+import IndividualCompleteProducts from "./components/individualProducts/IndividualCompleteProducts.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -60,6 +61,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<Header />}>
             <Route index element={<MainHeroSection />} />
+            <Route path="sale/:id" element={<IndividualCompleteProducts />} />
             <Route path="signup" element={<Signup />} />
             <Route path="login" element={<Login />} />
             <Route path="story" element={<Story />} />

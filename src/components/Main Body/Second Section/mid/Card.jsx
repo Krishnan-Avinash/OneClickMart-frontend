@@ -27,8 +27,12 @@ const Card = ({ image, link, name, price, blur, desc, id }) => {
       className={`whole card ${blur ? "blurred" : ""}`}
       style={{ filter: blur ? "blur(3px)" : "none" }}
     >
-      <img src={image} alt="" />
-      <h1>{name}</h1>
+      <Link to={`/sale/${id}`}>
+        <img src={image} alt="" />
+      </Link>
+      <Link to={`/sale/${id}`}>
+        <h1>{name}</h1>
+      </Link>
       <h3>$ {price}</h3>
       {!blur && <button onClick={addCart}>Add to Cart</button>}
     </Link>
