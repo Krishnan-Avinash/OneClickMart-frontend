@@ -44,6 +44,7 @@ const IndividualCompleteProducts = () => {
         price: data.price,
         desc: data.desc,
         totalPrice: data.price,
+        img: data.link,
       })
     );
     console.log("totalQuantity");

@@ -10,7 +10,9 @@ const Card = ({ image, link, name, price, blur, desc, id }) => {
   const toast = useToast();
   const dispatch = useDispatch();
   const addCart = () => {
-    dispatch(addToCart({ name, id, price, desc, totalPrice: price }));
+    dispatch(
+      addToCart({ name, id, price, desc, totalPrice: price, img: image })
+    );
     console.log("totalQuantity");
     toast({
       title: "ITEM ADDED TO CART.",

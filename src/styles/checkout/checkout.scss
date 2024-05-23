@@ -92,6 +92,46 @@
           }
         }
       }
+      .maincart-left {
+        width: 100%;
+        .main-cart-right {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          border: 1px solid black;
+          border-radius: 0.25rem;
+          padding: 1rem;
+          h3 {
+            padding: 1rem 2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+          }
+          //WILL DECIDE
+          .subtotal,
+          .shipping,
+          .total {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+          }
+          .subtotal,
+          .shipping {
+            border-bottom: 1px solid gray;
+          }
+          .checkout {
+            align-self: center;
+            width: 100%;
+            background-color: rgb(88, 88, 255);
+            border: 1px solid rgb(88, 88, 255);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: all 0.1s linear;
+          }
+        }
+      }
     }
   }
 }

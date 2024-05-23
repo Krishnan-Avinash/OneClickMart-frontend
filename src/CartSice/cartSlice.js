@@ -20,6 +20,7 @@ const cartSlice = createSlice({
           price: action.payload.price,
           totalPrice: action.payload.totalPrice,
           id: action.payload.id,
+          img: action.payload.img,
           quantity: 1,
         });
       }

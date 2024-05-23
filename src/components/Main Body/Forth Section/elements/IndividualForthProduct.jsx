@@ -8,7 +8,9 @@ const IndividualForthProduct = ({ image, link, name, price, desc, id }) => {
   const toast = useToast();
   const dispatch = useDispatch();
   const addCart = () => {
-    dispatch(addToCart({ name, id, price, desc, totalPrice: price }));
+    dispatch(
+      addToCart({ name, id, price, desc, totalPrice: price, img: image })
+    );
     console.log("totalQuantity");
     toast({
       title: "ITEM ADDED TO CART.",
@@ -20,7 +22,7 @@ const IndividualForthProduct = ({ image, link, name, price, desc, id }) => {
     });
   };
   return (
-    <Link to="" className="product-image">
+    <div to="" className="product-image">
       <Link to={`/products/${id}`}>
         <img src={image} alt="" />
       </Link>
@@ -29,7 +31,7 @@ const IndividualForthProduct = ({ image, link, name, price, desc, id }) => {
       </Link>
       <h3>$ {price}</h3>
       <button onClick={addCart}>Add to Cart</button>
-    </Link>
+    </div>
   );
 };
 

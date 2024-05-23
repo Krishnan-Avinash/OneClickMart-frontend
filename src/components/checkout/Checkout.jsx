@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,9 +10,38 @@ import {
   AlertDescription,
   useToast,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { useSelector } from "react-redux";
 
 const Checkout = () => {
+  const testCouponCodes = [
+    "ABCD-EFGH-IJKL",
+    "QWER-TYUI-ASDF",
+    "ZXCV-FGDH-MGJF",
+    "PIOU-HJGK-VBCN",
+    "ZRXE-QVTH-DEGF",
+    "FWTY-VDJE-XTIO",
+    "JTXW-GHQS-TVYR",
+    "NFAG-TWCY-UIVE",
+    "TEOX-MEGV-OQZU",
+    "MFHQ-RLLA-TWOO",
+  ];
+  const [couponValid, setCouponValid] = useState(false);
+  const data = useSelector((state) => state.reducer);
+
+  const [totalValue, setTotalValue] = useState(0);
+  useEffect(() => {
+    if (data.itemList.length > 0) {
+      let sum = 0;
+      for (let i = 0; i < data.itemList.length; i++) {
+        sum = sum + data.itemList[i].totalPrice;
+      }
+      console.log(sum);
+      setTotalValue(sum);
+    }
+  }, [data.itemList]);
+
   const [couponCode, setCouponCode] = useState("");
   const toast = useToast();
 
@@ -30,6 +59,15 @@ const Checkout = () => {
 
     setCouponCode(formattedInput);
   };
+
+  function checkValidity() {
+    let c = testCouponCodes.find((item) => item === couponCode);
+    if (c) {
+      setCouponValid(true);
+    } else {
+      setCouponValid(false);
+    }
+  }
   return (
     <>
       <div className="checkout-container">
@@ -65,6 +103,63 @@ const Checkout = () => {
           </div>
           <div className="checkout-right">
             {/* {DATA FROM CART} */}
+            <div className="maincart-left">
+              <div className="main-cart-right">
+                <h3>Cart Total</h3>
+                <div className="subtotal">
+                  <p>Subtotal</p>
+                  <p
+                    style={{
+                      color: "#5858FF",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                    }}
+                  >
+                    {totalValue}
+                  </p>
+                  {/* <p>PRICE FROM STORE</p> */}
+                </div>
+                <div className="shipping">
+                  <p>Shipping</p>
+                  <p
+                    style={{
+                      color: "#5858FF",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                    }}
+                  >
+                    0
+                  </p>
+                </div>
+                {couponValid && (
+                  <div className="shipping">
+                    <p>Coupon Discount</p>
+                    <p
+                      style={{
+                        color: "#5858FF",
+                        fontSize: "1.1rem",
+                        fontWeight: "700",
+                      }}
+                    >
+                      - 500
+                    </p>
+                  </div>
+                )}
+                <div className="total">
+                  <p>Total</p>
+                  <p
+                    style={{
+                      color: "#5858FF",
+                      fontSize: "1.1rem",
+                      fontWeight: "700",
+                    }}
+                  >
+                    {couponValid ? totalValue - 500 : totalValue}
+                  </p>
+                  {/* <p>PRICE FROM STORE</p> */}
+                </div>
+              </div>
+            </div>
             <div className="coupons">
               <input
                 type="text"
@@ -83,6 +178,7 @@ const Checkout = () => {
                       isClosable: true,
                     });
                   }
+                  checkValidity();
                 }}
               >
                 Apply Coupon
