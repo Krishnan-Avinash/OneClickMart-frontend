@@ -21,8 +21,12 @@ const IndividualForthProduct = ({ image, link, name, price, desc, id }) => {
   };
   return (
     <Link to="" className="product-image">
-      <img src={image} alt="" />
-      <h1>{name}</h1>
+      <Link to={`/products/${id}`}>
+        <img src={image} alt="" />
+      </Link>
+      <Link to={`/products/${id}`}>
+        <h1>{name}</h1>
+      </Link>
       <h3>$ {price}</h3>
       <button onClick={addCart}>Add to Cart</button>
     </Link>

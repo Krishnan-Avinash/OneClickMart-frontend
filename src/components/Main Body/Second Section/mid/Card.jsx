@@ -22,20 +22,32 @@ const Card = ({ image, link, name, price, blur, desc, id }) => {
   };
 
   return (
-    <Link
-      to=""
+    <div
       className={`whole card ${blur ? "blurred" : ""}`}
-      style={{ filter: blur ? "blur(3px)" : "none" }}
+      style={{ position: "relative", filter: blur ? "blur(3px)" : "none" }}
     >
-      <Link to={`/sale/${id}`}>
+      {blur && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            cursor: "not-allowed",
+            zIndex: 1,
+          }}
+        ></div>
+      )}
+      <Link to={`/sale/${id}`} style={{ position: "relative", zIndex: 0 }}>
         <img src={image} alt="" />
       </Link>
-      <Link to={`/sale/${id}`}>
+      <Link to={`/sale/${id}`} style={{ position: "relative", zIndex: 0 }}>
         <h1>{name}</h1>
       </Link>
       <h3>$ {price}</h3>
       {!blur && <button onClick={addCart}>Add to Cart</button>}
-    </Link>
+    </div>
   );
 };
 

@@ -43,6 +43,7 @@ import "./styles/myaccount/myaccount.scss";
 import "./styles/checkout/checkout.scss";
 import "./styles/maincart/maincart.scss";
 import "./styles/individualproductdetails/individualproductdetails.scss";
+import "./styles/individual-complete-product/individual-complete-product.scss";
 import Signup from "./components/SignUp/Signup.jsx";
 import Login from "./components/Login/Login.jsx";
 import Story from "./components/story/Story.jsx";
@@ -62,6 +63,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/" element={<Header />}>
             <Route index element={<MainHeroSection />} />
             <Route path="sale/:id" element={<IndividualCompleteProducts />} />
+            <Route
+              path="products/:id"
+              element={<IndividualCompleteProducts />}
+            />
+            {/* <Route path="products/playstation5" element={<IndividualCompleteProducts/>}/> */}
             <Route path="signup" element={<Signup />} />
             <Route path="login" element={<Login />} />
             <Route path="story" element={<Story />} />

@@ -16,8 +16,12 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { useSelector } from "react-redux";
 
 const MainCart = () => {
+  const data = useSelector((state) => state.reducer);
+  console.log(data);
+
   return (
     <>
       <div className="cart-container">
@@ -42,33 +46,15 @@ const MainCart = () => {
                 </Tr>
               </Thead>
               <Tbody>
-                <Tr>
-                  <Td>inches</Td>
-                  <Td>millimetres (mm)</Td>
-                  <Td>25.4</Td>
-                  <Td>25.4</Td>
-                </Tr>
-                <Tr>
-                  <Td>feet</Td>
-                  <Td>centimetres (cm)</Td>
-                  <Td>30.48</Td>
-                  <Td>30.48</Td>
-                </Tr>
-                <Tr>
-                  <Td>yards</Td>
-                  <Td>metres (m)</Td>
-                  <Td>0.91444</Td>
-                  <Td>0.91444</Td>
-                </Tr>
+                {data.itemList.map((item, index) => (
+                  <Tr>
+                    <Td>{item.name}</Td>
+                    <Td>{item.price}</Td>
+                    <Td>{item.quantity}</Td>
+                    <Td>{item.totalPrice}</Td>
+                  </Tr>
+                ))}
               </Tbody>
-              <Tfoot>
-                <Tr>
-                  <Th>To convert</Th>
-                  <Th>into</Th>
-                  <Th>multiply by</Th>
-                  <Th>multiply by</Th>
-                </Tr>
-              </Tfoot>
             </Table>
           </TableContainer>
           <div className="buttons">

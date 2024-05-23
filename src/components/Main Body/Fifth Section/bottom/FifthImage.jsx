@@ -9,7 +9,7 @@ const FifthImage = () => {
   return (
     <main className="fifth-image">
       <div className="fifth-left">
-        <Link>
+        <Link to={`products/21`}>
           <img src={imgL} alt="Error" />
         </Link>
       </div>
