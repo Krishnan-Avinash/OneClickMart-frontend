@@ -8,6 +8,7 @@ import {
 import call from "../../assets/callus2png.png";
 import mail from "../../assets/mail2png.png";
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -15,10 +16,12 @@ const Contact = () => {
       <div className="about-container">
         <Breadcrumb>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            <BreadcrumbLink>
+              <Link to="/">Home</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Contact</BreadcrumbLink>
+            <BreadcrumbLink>Contact</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
         <div className="about-main">

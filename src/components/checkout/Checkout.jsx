@@ -29,6 +29,7 @@ const Checkout = () => {
   ];
   const [couponValid, setCouponValid] = useState(false);
   const data = useSelector((state) => state.reducer);
+  const [number, setNumber] = useState("");
 
   const [totalValue, setTotalValue] = useState(0);
   useEffect(() => {
@@ -73,18 +74,24 @@ const Checkout = () => {
       <div className="checkout-container">
         <Breadcrumb className="breadcrumb">
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="#" className="breadcrumb-acc">
-              My Account
+            <BreadcrumbLink>
+              <Link to="/">Home</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Cart</BreadcrumbLink>
+            <BreadcrumbLink className="breadcrumb-acc">
+              <Link to="/myaccount">My Account</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">CheckOut</BreadcrumbLink>
+            <BreadcrumbLink>
+              <Link to="/cart">Cart</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbItem>
+            <BreadcrumbLink>
+              <Link>CheckOut</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
         <div className="checkout-main">
@@ -98,7 +105,13 @@ const Checkout = () => {
               placeholder="Apartment, floor, etc. (Optional)"
             />
             <input type="text" placeholder="Town/City" required />
-            <input type="number" placeholder="Phone Number" required />
+            <input
+              type="number"
+              placeholder="Phone Number"
+              required
+              onChange={(e) => setNumber(e.target.value.slice(0, 10))}
+              value={number}
+            />
             <input type="email" placeholder="Email Address" required />
           </div>
           <div className="checkout-right">
@@ -131,7 +144,7 @@ const Checkout = () => {
                     0
                   </p>
                 </div>
-                {couponValid && (
+                {couponValid && totalValue >= 700 && (
                   <div className="shipping">
                     <p>Coupon Discount</p>
                     <p
@@ -154,7 +167,9 @@ const Checkout = () => {
                       fontWeight: "700",
                     }}
                   >
-                    {couponValid ? totalValue - 500 : totalValue}
+                    {couponValid && totalValue >= 700
+                      ? totalValue - 500
+                      : totalValue}
                   </p>
                   {/* <p>PRICE FROM STORE</p> */}
                 </div>
@@ -173,6 +188,15 @@ const Checkout = () => {
                     toast({
                       title:
                         "Please enter a valid coupon code of 14 characters.",
+                      status: "error",
+                      duration: 6000,
+                      isClosable: true,
+                    });
+                  } else if (couponCode.length == 14 && totalValue < 700) {
+                    toast({
+                      title: "Oops! Your cart total is below $700.",
+                      description:
+                        "Add a few more items to your cart to enjoy the discount!",
                       status: "error",
                       duration: 6000,
                       isClosable: true,

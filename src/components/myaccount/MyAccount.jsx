@@ -6,6 +6,7 @@ import {
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -13,7 +14,9 @@ const Contact = () => {
       <div className="account-container">
         <Breadcrumb>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            <BreadcrumbLink href="#">
+              <Link to="/">Home</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
             <BreadcrumbLink href="#">My Account</BreadcrumbLink>

@@ -39,7 +39,9 @@ const MainCart = () => {
       <div className="cart-container">
         <Breadcrumb>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            <BreadcrumbLink href="#">
+              <Link to="/">Home</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
             <BreadcrumbLink href="#">Cart</BreadcrumbLink>

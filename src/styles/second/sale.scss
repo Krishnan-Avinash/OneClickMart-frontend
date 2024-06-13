@@ -9,6 +9,12 @@
   overflow-y: hidden;
   overflow-x: scroll;
 }
+.sale-ul::-webkit-scrollbar {
+  display: none;
+}
 .blurred {
   filter: blur(3px);
+}
+*::-webkit-scrollbar {
+  display: none;
 }

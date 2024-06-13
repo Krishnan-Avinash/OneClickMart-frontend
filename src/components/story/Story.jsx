@@ -8,6 +8,7 @@ import {
 import img1 from "../../assets/story2.jpg";
 import Sixth from "../Main Body/Sixth Section/Sixth";
 import Footer from "../Footer/Footer";
+import { Link } from "react-router-dom";
 
 const Story = () => {
   return (
@@ -15,10 +16,12 @@ const Story = () => {
       <div className="story-container">
         <Breadcrumb>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Home</BreadcrumbLink>
+            <BreadcrumbLink>
+              <Link to="/">Home</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Story</BreadcrumbLink>
+            <BreadcrumbLink>Story</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
         <div className="story-main">
