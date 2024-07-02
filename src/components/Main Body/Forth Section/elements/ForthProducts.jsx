@@ -11,7 +11,6 @@ const ForthProducts = () => {
     let resp = await axios.get("http://localhost:3000/products");
     setLoading(false);
     let res = resp.data;
-    console.log(res);
     let someData = res.slice(20, 28);
     setData(someData);
   };

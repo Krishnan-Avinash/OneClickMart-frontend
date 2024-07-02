@@ -12,8 +12,10 @@ import {
   useDisclosure,
   Input,
 } from "@chakra-ui/react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const SearchNCart = () => {
+  const { isAuthenticated, logout } = useAuth0();
   const options = {
     "Dress for women": "Dress For Women",
     "clothes for women": "Clothes For Women",
@@ -122,7 +124,7 @@ const SearchNCart = () => {
           <MenuItem>My Orders</MenuItem>
           <MenuItem>My Cancellations</MenuItem>
           <MenuItem>My Reviews</MenuItem>
-          <MenuItem>Logout</MenuItem>
+          {isAuthenticated && <MenuItem onClick={logout}>Logout</MenuItem>}
         </MenuList>
       </Menu>
     </div>

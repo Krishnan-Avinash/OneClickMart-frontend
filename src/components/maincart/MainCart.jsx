@@ -39,12 +39,12 @@ const MainCart = () => {
       <div className="cart-container">
         <Breadcrumb>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">
+            <div>
               <Link to="/">Home</Link>
-            </BreadcrumbLink>
+            </div>
           </BreadcrumbItem>
           <BreadcrumbItem>
-            <BreadcrumbLink href="#">Cart</BreadcrumbLink>
+            <BreadcrumbLink>Cart</BreadcrumbLink>
           </BreadcrumbItem>
         </Breadcrumb>
         <div className="cart-main">
