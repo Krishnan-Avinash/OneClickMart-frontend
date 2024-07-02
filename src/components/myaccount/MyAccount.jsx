@@ -35,14 +35,10 @@ const Contact = () => {
 
   const userDataOut = useSelector((state) => state.userR.user);
   const userData = userDataOut.newUser;
-  console.log("USER: ", userData);
-  // console.log("REDUX: ", userData.newUser);
 
   //----REDUX-----
   //----REDUX-----
   //----REDUX-----
-
-  // console.log("LOCAL STORAGE: ", userData);
 
   //------DATA TO SEND AT BACKEND-------
   const [firstName, setFirstName] = useState("");
@@ -76,7 +72,6 @@ const Contact = () => {
       "http://localhost:8080/api/oneClickMart/updateUserData",
       obj
     );
-    // console.log("Response: ", response);
     if (response.status == 204) {
       toast({
         title: "Data Updated.",

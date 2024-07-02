@@ -1,36 +1,38 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//CHAKRA
+//------CHAKRA------
 import { ChakraProvider } from "@chakra-ui/react";
 
 //ROUTER
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-//REDUX
+//------REDUX------
 import { Provider } from "react-redux";
-//STORE
+//------STORE------
 import { store } from "./store/store.js";
 
-//AUTH0
+//------AUTH0------
 import { Auth0Provider } from "@auth0/auth0-react";
 
-//STYLES
+//-------STYLES-------
 import "./styles/common.scss";
 
-import Header from "./components/Header/Header.jsx";
-import MainHeroSection from "./components/Main Body/MainHeroSection.jsx";
-import Signup from "./components/SignUp/Signup.jsx";
-// import Login from "./components/Login/Login.jsx";
-import Story from "./components/story/Story.jsx";
-import About from "./components/contact/Contact.jsx";
-import Universal from "./components/universal/Universal.jsx";
-import MyAccount from "./components/myaccount/MyAccount.jsx";
-import Checkout from "./components/checkout/Checkout.jsx";
-import MainCart from "./components/maincart/MainCart.jsx";
-import IndividualProductDetails from "./components/individualProduct/IndividualProductDetails.jsx";
-import IndividualCompleteProducts from "./components/individualProducts/IndividualCompleteProducts.jsx";
-import VerifyEmail from "./components/verifyEmail/VerifyEmail.jsx";
+//------COMPONENTS-------
+import {
+  Checkout,
+  Header,
+  Signup,
+  Story,
+  About,
+  Universal,
+  MyAccount,
+  MainCart,
+  IndividualCompleteProducts,
+  IndividualProductDetails,
+  VerifyEmail,
+  MainHeroSection,
+} from "./Common.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Auth0Provider
@@ -51,9 +53,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 path="products/:id"
                 element={<IndividualCompleteProducts />}
               />
-              {/* <Route path="products/playstation5" element={<IndividualCompleteProducts/>}/> */}
               <Route path="signup" element={<Signup />} />
-              {/* <Route path="login" element={<Login />} /> */}
               <Route path="story" element={<Story />} />
               <Route path="contact" element={<About />} />
               <Route path="myaccount" element={<MyAccount />} />
