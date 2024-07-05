@@ -35,7 +35,7 @@ const Contact = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    if (msg.current.value.length > 0) {
+    if (isAuthenticated && msg.current.value.length > 0) {
       const response = await axios.patch(
         "http://localhost:8080/api/oneClickMart/sendMessage",
         {
@@ -59,9 +59,16 @@ const Contact = () => {
         });
       }
       msg.current.value = "";
-    } else {
+    } else if (isAuthenticated && msg.current.value.length < 1) {
       toast({
         title: "Message should not be empty",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    } else if (!isAuthenticated) {
+      toast({
+        title: "Kindly Login To Send Message",
         status: "error",
         duration: 5000,
         isClosable: true,

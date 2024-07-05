@@ -13,12 +13,17 @@ import {
   Td,
   TableCaption,
   TableContainer,
+  useToast,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useSelector } from "react-redux";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const MainCart = () => {
+  const toast = useToast();
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth0();
   const data = useSelector((state) => state.reducer);
   console.log(data);
 
@@ -33,6 +38,19 @@ const MainCart = () => {
       setTotalValue(sum);
     }
   }, [data.itemList]);
+
+  const checkBeforeProceed = () => {
+    if (isAuthenticated) {
+      navigate("/checkout");
+    } else {
+      toast({
+        title: "Kindly login to proceed",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+  };
 
   return (
     <>
@@ -91,9 +109,9 @@ const MainCart = () => {
             <Link to="/">
               <button className="return-to-shop">Return To Shop</button>
             </Link>
-            <Link to="/checkout">
+            <div onClick={checkBeforeProceed}>
               <button className="checkout">Proceed to Checkout</button>
-            </Link>
+            </div>
           </div>
           {/* <div className="maincart-left">
             <div className="main-cart-right">

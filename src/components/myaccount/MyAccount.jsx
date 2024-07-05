@@ -94,6 +94,15 @@ const Contact = () => {
     }
   };
 
+  if (!isAuthenticated) {
+    toast({
+      title: "Kindly login to access this page",
+      status: "error",
+      duration: 10000,
+      isClosable: false,
+    });
+  }
+
   //------GET UPDATED DATA-------
   const [emailState, setEmail] = useState("");
 
@@ -245,14 +254,16 @@ const Contact = () => {
                   value={address}
                 />
               </div>
-              <div className="account-right-last">
-                <button className="account-cancel" onClick={clear}>
-                  Cancel
-                </button>
-                <button className="account-save" type="submit">
-                  Save Changes
-                </button>
-              </div>
+              {isAuthenticated && (
+                <div className="account-right-last">
+                  <button className="account-cancel" onClick={clear}>
+                    Cancel
+                  </button>
+                  <button className="account-save" type="submit">
+                    Save Changes
+                  </button>
+                </div>
+              )}
             </form>
           </div>
         </div>
