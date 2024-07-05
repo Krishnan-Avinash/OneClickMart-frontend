@@ -172,6 +172,7 @@ const Contact = () => {
                 id="message"
                 placeholder="Your message"
                 ref={msg}
+                style={{ resize: "none" }}
                 // onChange={(e) => setMsg(e.target.value)}
               ></textarea>
               {/* <input type="text" placeholder="Your Message" required /> */}
