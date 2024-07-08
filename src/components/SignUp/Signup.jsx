@@ -41,6 +41,7 @@ const Signup = () => {
   //----FETCH DATA----
   const fetchUser = async () => {
     try {
+      // console.log("Email: ", emailState);
       const response = await axios.get(
         `http://localhost:8080/api/oneClickMart/getUser/${emailState}`
       );
@@ -60,6 +61,9 @@ const Signup = () => {
       console.error("Failed to fetch user data", error);
     }
   };
+
+  // console.log("authenticated: ", isAuthenticated);
+
   useEffect(() => {
     if (user && user.email) {
       setEmail(user.email);

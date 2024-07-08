@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { addToCart } from "../../CartSice/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useToast } from "@chakra-ui/react";
 
 const IndividualCompleteProducts = () => {
   const params = useParams();
+
+  const userDataOut = useSelector((state) => state.userR.user);
+  const userData = userDataOut.newUser;
 
   const [data, setData] = useState(null);
   const [requiredData, setRequiredData] = useState([]);
@@ -45,6 +48,7 @@ const IndividualCompleteProducts = () => {
         desc: data.desc,
         totalPrice: data.price,
         img: data.link,
+        userId: userData._id,
       })
     );
     console.log("totalQuantity");

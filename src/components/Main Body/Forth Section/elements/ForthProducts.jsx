@@ -8,10 +8,15 @@ const ForthProducts = () => {
   const [loading, setLoading] = useState(false);
   const fetchApiData = async () => {
     setLoading(true);
-    let resp = await axios.get("http://localhost:3000/products");
+    let response = await axios.get(
+      "http://localhost:8080/api/oneClickMart/admin/getProduct"
+    );
     setLoading(false);
-    let res = resp.data;
-    let someData = res.slice(20, 28);
+
+    // console.log("REsponse: ", response);
+
+    let res = response.data.data;
+    let someData = res.slice(0, 8);
     setData(someData);
   };
   useEffect(() => {
@@ -35,13 +40,13 @@ const ForthProducts = () => {
     return (
       <ul className="products-ul">
         {data.map((item, index) => (
-          <li key={item.id}>
+          <li key={index}>
             <IndividualForthProduct
               name={item.name}
-              image={item.link}
+              image={item.mainImg}
               price={item.price}
-              id={item.id}
-              desc={item.desc}
+              id={item._id}
+              desc={item.description}
             />
           </li>
         ))}

@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// import { useSelector } from "react-redux";
+// const userDataOut = useSelector((state) => state.userR.user);
+// console.log("userDataOut: ", userDataOut);
+
+import axios from "axios";
+
 const initialState = {
   itemList: [],
   totalQuantity: 0,
@@ -11,7 +17,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart(state, action) {
+    async addToCart(state, action) {
       const newItem = action.payload;
       const existingItem = state.itemList.find(
         (item) => item.id === newItem.id
@@ -30,6 +36,15 @@ const cartSlice = createSlice({
         });
       }
       state.totalQuantity++;
+      console.log("action.payload.userid: ", action.payload.userId);
+      console.log("action.payload.id: ", action.payload.id);
+      await axios.post(
+        "http://localhost:8080/api/oneClickMart/cart/addToCart",
+        {
+          userId: action.payload.userId,
+          itemId: action.payload.id,
+        }
+      );
     },
     removeFromCart(state, action) {
       const findItem = state.itemList.find(
