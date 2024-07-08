@@ -3,7 +3,6 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator,
   Table,
   Thead,
   Tbody,
@@ -11,7 +10,6 @@ import {
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
   useToast,
 } from "@chakra-ui/react";
@@ -24,29 +22,15 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 
 import { addUser } from "../../userSlice/userSlice";
+import { updateTotal } from "../../CartSice/cartSlice";
 
 const MainCart = () => {
   const dispatch = useDispatch();
   const toast = useToast();
   const navigate = useNavigate();
   const { user: auth0User, isAuthenticated } = useAuth0();
-  // const data2 = useSelector((state) => state.reducer.itemList);
-  // console.log("OLD WAY:   ", data2);
   const userDataOut = useSelector((state) => state.userR.user);
   const data = userDataOut.newUser;
-  // console.log("REdux userdata: ", data?.cart);
-
-  // const [totalValue, setTotalValue] = useState(0);
-  // useEffect(() => {
-  //   if (data.itemList.length > 0) {
-  //     let sum = 0;
-  //     for (let i = 0; i < data.itemList.length; i++) {
-  //       sum = sum + data.itemList[i].totalPrice;
-  //     }
-  //     console.log(sum);
-  //     setTotalValue(sum);
-  //   }
-  // }, [data.itemList]);
 
   const checkBeforeProceed = () => {
     if (isAuthenticated) {
@@ -145,13 +129,10 @@ const MainCart = () => {
   }
   console.log("products ", products);
   const totalVal = () => {
-    // let sum=0;
-    // let sum=products.reduce(acc,curr)=>{
-    //   return acc+curr;
-    // }
     let sum = products.reduce((acc, curr) => {
       return Number(acc) + Number(curr.price) * Number(curr.quantity);
     }, 0);
+    dispatch(updateTotal({ total: sum, products: products }));
     return sum;
   };
   return (
@@ -168,7 +149,6 @@ const MainCart = () => {
           </BreadcrumbItem>
         </Breadcrumb>
         <div className="cart-main">
-          {/* {ITEMS FROM CART} */}
           <TableContainer>
             <Table variant="striped">
               <Thead>
@@ -212,16 +192,11 @@ const MainCart = () => {
               <button className="return-to-shop">Return To Shop</button>
             </Link>
             <div onClick={checkBeforeProceed}>
-              <button className="checkout">Proceed to Checkout</button>
+              {totalVal() > 0 && (
+                <button className="checkout">Proceed to Checkout</button>
+              )}
             </div>
           </div>
-          {/* <div className="maincart-left">
-            <div className="main-cart-right">
-              <Link to="/checkout">
-                <button className="checkout">Proceed to Checkout</button>
-              </Link>
-            </div>
-          </div> */}
         </div>
       </div>
       <Footer />
