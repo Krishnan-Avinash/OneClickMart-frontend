@@ -32,6 +32,7 @@ import {
   IndividualProductDetails,
   VerifyEmail,
   MainHeroSection,
+  MyOrders,
 } from "./Common.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -57,6 +58,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="story" element={<Story />} />
               <Route path="contact" element={<About />} />
               <Route path="myaccount" element={<MyAccount />} />
+              <Route path="myorders" element={<MyOrders />} />
               <Route path="cart" element={<MainCart />} />
               <Route
                 path="individualelement"

@@ -121,7 +121,9 @@ const SearchNCart = () => {
           <Link to="/myaccount">
             <MenuItem>My Account</MenuItem>
           </Link>
-          <MenuItem>My Orders</MenuItem>
+          <Link to="/myorders">
+            <MenuItem>My Orders</MenuItem>
+          </Link>
           <MenuItem>My Cancellations</MenuItem>
           <MenuItem>My Reviews</MenuItem>
           {isAuthenticated && <MenuItem onClick={logout}>Logout</MenuItem>}

@@ -96,6 +96,20 @@ const Checkout = () => {
         total,
       }
     );
+    const response2 = await axios.post(
+      "http://localhost:8080/api/oneCickMart/order/createOrderForAdmin",
+      {
+        fullName: name,
+        state,
+        streetAddress: address,
+        town,
+        number,
+        apartment,
+        email: user?.email,
+        product: products,
+        total,
+      }
+    );
     if (response.data.success) {
       setName("");
       setState("");

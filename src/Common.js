@@ -14,6 +14,7 @@ import MainCart from "./components/maincart/MainCart.jsx";
 import IndividualProductDetails from "./components/individualProduct/IndividualProductDetails.jsx";
 import IndividualCompleteProducts from "./components/individualProducts/IndividualCompleteProducts.jsx";
 import VerifyEmail from "./components/verifyEmail/VerifyEmail.jsx";
+import MyOrders from "./components/myorders/MyOrders.jsx";
 
 export {
   Checkout,
@@ -28,4 +29,5 @@ export {
   IndividualCompleteProducts,
   IndividualProductDetails,
   VerifyEmail,
+  MyOrders,
 };
