@@ -51,7 +51,7 @@ const IndividualForthProduct = ({ image, link, name, price, desc, id }) => {
   const fetchUser = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/oneClickMart/getUser/${emailState}`
+        `https://oneclickmart.onrender.com/api/oneClickMart/getUser/${emailState}`
       );
       dispatch(addUser({ newUser: response.data.user }));
     } catch (error) {
@@ -71,7 +71,7 @@ const IndividualForthProduct = ({ image, link, name, price, desc, id }) => {
   return (
     <div to="" className="product-image">
       <Link to={`/products/${id}`}>
-        <img src={`http://localhost:8080/images/${image}`} alt="" />
+        <img src={`https://oneclickmart.onrender.com/images/${image}`} alt="" />
       </Link>
       <Link to={`/products/${id}`}>
         <h1>{name}</h1>

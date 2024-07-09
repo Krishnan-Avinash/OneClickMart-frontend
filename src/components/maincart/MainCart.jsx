@@ -50,7 +50,7 @@ const MainCart = () => {
   const fetchUser = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/oneClickMart/getUser/${emailState}`
+        `https://oneclickmart.onrender.com/api/oneClickMart/getUser/${emailState}`
       );
       // setData(response.data.user);
       //----REDUX------
@@ -83,7 +83,7 @@ const MainCart = () => {
   async function fetchProductDetails(id) {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/oneClickMart/admin/getParticularProduct",
+        "https://oneclickmart.onrender.com/api/oneClickMart/admin/getParticularProduct",
         { params: { id } }
       );
       if (!response.data.success) {
@@ -166,7 +166,7 @@ const MainCart = () => {
                       <Td>
                         <div>{item.name}</div>
                         <img
-                          src={`http://localhost:8080/images/${item.mainImg}`}
+                          src={`https://oneclickmart.onrender.com/images/${item.mainImg}`}
                           alt="Err"
                           style={{ height: "5rem" }}
                         />

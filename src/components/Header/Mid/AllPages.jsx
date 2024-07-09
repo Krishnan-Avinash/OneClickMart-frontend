@@ -24,7 +24,7 @@ const AllPages = () => {
   const sendEmail = async (email) => {
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/oneClickMart/`,
+        `https://oneclickmart.onrender.com/api/oneClickMart/`,
         { email },
         { headers: { "Content-Type": "application/json" } }
       );

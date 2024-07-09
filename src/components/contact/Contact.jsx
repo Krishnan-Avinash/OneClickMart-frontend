@@ -37,7 +37,7 @@ const Contact = () => {
 
     if (isAuthenticated && msg.current.value.length > 0) {
       const response = await axios.patch(
-        "http://localhost:8080/api/oneClickMart/sendMessage",
+        "https://oneclickmart.onrender.com/api/oneClickMart/sendMessage",
         {
           email: userData.email,
           message: msg.current.value,
@@ -80,7 +80,7 @@ const Contact = () => {
   const fetchUser = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/oneClickMart/getUser/${emailState}`
+        `https://oneclickmart.onrender.com/api/oneClickMart/getUser/${emailState}`
       );
       // setData(response.data.user);
       //----REDUX------

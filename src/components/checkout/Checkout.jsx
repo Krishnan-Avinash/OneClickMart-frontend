@@ -83,7 +83,7 @@ const Checkout = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const response = await axios.post(
-      "http://localhost:8080/api/oneCickMart/order/createOrder",
+      "https://oneclickmart.onrender.com/api/oneCickMart/order/createOrder",
       {
         fullName: name,
         state,
@@ -97,7 +97,7 @@ const Checkout = () => {
       }
     );
     const response2 = await axios.post(
-      "http://localhost:8080/api/oneCickMart/order/createOrderForAdmin",
+      "https://oneclickmart.onrender.com/api/oneCickMart/order/createOrderForAdmin",
       {
         fullName: name,
         state,

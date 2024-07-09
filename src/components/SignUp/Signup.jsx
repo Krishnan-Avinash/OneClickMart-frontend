@@ -43,7 +43,7 @@ const Signup = () => {
     try {
       // console.log("Email: ", emailState);
       const response = await axios.get(
-        `http://localhost:8080/api/oneClickMart/getUser/${emailState}`
+        `https://oneclickmart.onrender.com/api/oneClickMart/getUser/${emailState}`
       );
       setData(response.data.user);
       //----REDUX------
@@ -90,7 +90,7 @@ const Signup = () => {
   };
   const submitHandler = async () => {
     const response = await axios.patch(
-      "http://localhost:8080/api/oneClickMart/updateUserData",
+      "https://oneclickmart.onrender.com/api/oneClickMart/updateUserData",
       obj
     );
   };

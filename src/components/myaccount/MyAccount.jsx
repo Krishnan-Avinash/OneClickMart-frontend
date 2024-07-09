@@ -69,7 +69,7 @@ const Contact = () => {
       address,
     };
     const response = await axios.patch(
-      "http://localhost:8080/api/oneClickMart/updateUserData",
+      "https://oneclickmart.onrender.com/api/oneClickMart/updateUserData",
       obj
     );
     if (response.status == 204) {
@@ -109,7 +109,7 @@ const Contact = () => {
   const fetchUser = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/oneClickMart/getUser/${emailState}`
+        `https://oneclickmart.onrender.com/api/oneClickMart/getUser/${emailState}`
       );
       // setData(response.data.user);
       //----REDUX------

@@ -41,7 +41,7 @@ const cartSlice = createSlice({
       console.log("action.payload.userid: ", action.payload.userId);
       console.log("action.payload.id: ", action.payload.id);
       await axios.post(
-        "http://localhost:8080/api/oneClickMart/cart/addToCart",
+        "https://oneclickmart.onrender.com/api/oneClickMart/cart/addToCart",
         {
           userId: action.payload.userId,
           itemId: action.payload.id,

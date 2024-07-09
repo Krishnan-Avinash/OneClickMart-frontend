@@ -10,7 +10,7 @@ const MyOrders = () => {
     console.log("email: ", user.email);
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/oneCickMart/order/getIndividualOrder/${user.email}`
+        `https://oneclickmart.onrender.com/api/oneCickMart/order/getIndividualOrder/${user.email}`
       );
       console.log("Response: ", response);
       setOrders(response.data.data);

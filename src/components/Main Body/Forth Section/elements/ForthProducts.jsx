@@ -9,7 +9,7 @@ const ForthProducts = () => {
   const fetchApiData = async () => {
     setLoading(true);
     let response = await axios.get(
-      "http://localhost:8080/api/oneClickMart/admin/getProduct"
+      "https://oneclickmart.onrender.com/api/oneClickMart/admin/getProduct"
     );
     setLoading(false);
 
