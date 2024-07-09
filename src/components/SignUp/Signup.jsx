@@ -163,7 +163,7 @@ const Signup = () => {
       </>
     );
   } else {
-    navigate("https://oneclickmart.netlify.app/");
+    navigate(window.location.origin);
   }
 };
 
