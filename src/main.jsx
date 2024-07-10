@@ -40,7 +40,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     domain="dev-wdlr56ndce87jp4y.us.auth0.com"
     clientId="wHFrxiuvvErMUIfVHfv8rybk8ZelAV1E"
     authorizationParams={{
-      redirect_uri: window.location.origin,
+      redirect_uri: "/",
     }}
   >
     <BrowserRouter>
