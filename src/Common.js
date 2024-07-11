@@ -15,6 +15,7 @@ import IndividualProductDetails from "./components/individualProduct/IndividualP
 import IndividualCompleteProducts from "./components/individualProducts/IndividualCompleteProducts.jsx";
 import VerifyEmail from "./components/verifyEmail/VerifyEmail.jsx";
 import MyOrders from "./components/myorders/MyOrders.jsx";
+import Temp from "./components/Temp.jsx";
 
 export {
   Checkout,
@@ -30,4 +31,5 @@ export {
   IndividualProductDetails,
   VerifyEmail,
   MyOrders,
+  Temp,
 };

@@ -33,15 +33,14 @@ import {
   VerifyEmail,
   MainHeroSection,
   MyOrders,
+  Temp,
 } from "./Common.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Auth0Provider
     domain="dev-wdlr56ndce87jp4y.us.auth0.com"
     clientId="wHFrxiuvvErMUIfVHfv8rybk8ZelAV1E"
-    authorizationParams={{
-      redirect_uri: "/",
-    }}
+    // redirectUri={window.location.origin}
   >
     <BrowserRouter>
       <Provider store={store}>
@@ -60,6 +59,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="myaccount" element={<MyAccount />} />
               <Route path="myorders" element={<MyOrders />} />
               <Route path="cart" element={<MainCart />} />
+              <Route
+                path="signup/https://oneclickmart.netlify.app/"
+                element={<Temp />}
+              />
               <Route
                 path="individualelement"
                 element={<IndividualProductDetails />}
