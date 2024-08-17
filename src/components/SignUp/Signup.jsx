@@ -93,7 +93,7 @@ const Signup = () => {
       "https://oneclickmart.onrender.com/api/oneClickMart/updateUserData",
       obj
     );
-    navigate("/");
+    navigate("https://oneclickmart.netlify.app");
   };
   if (isAuthenticated && data.dataSet != true) {
     return (
