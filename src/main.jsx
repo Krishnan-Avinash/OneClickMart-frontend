@@ -64,7 +64,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 element={<Temp />}
               />
               <Route
-                path="signup/https://oneclickmart.netlify.app/signup?"
+                path="https://oneclickmart.netlify.app/signup?"
                 element={<Temp />}
               />
               <Route
